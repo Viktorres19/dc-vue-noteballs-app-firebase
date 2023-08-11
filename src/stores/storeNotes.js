@@ -6,8 +6,9 @@ import {
 } from 'firebase/firestore'
 import { db } from '@/js/firebase'
 
-const notesCollectionRef = collection(db, 'notes')
-const notesCollectionQuery = query(notesCollectionRef, orderBy('date', 'desc'))
+const notesCollectionRef = collection(db, 'users', 'e9jDIDINBCXnQKfjpEJiLW6yhlq1', 'notes')
+const notesCollectionQuery = query(notesCollectionRef,
+  orderBy('date', 'desc'))
 
 export const useStoreNotes = defineStore('storeNotes', {
   state: () => {
