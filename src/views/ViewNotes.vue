@@ -46,7 +46,7 @@
   imports
 */
 
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
   import Note from '@/components/Notes/Note.vue'
   import AddEditNote from '@/components/Notes/AddEditNote.vue'
   import { useStoreNotes } from '@/stores/storeNotes'
@@ -72,6 +72,10 @@
     addEditNoteRef.value.focusTextarea()
   }
 /*and use it with the parameter which is needed to be watching*/
-  useWatchCharacters(newNote, 100)
+  useWatchCharacters(newNote)
+
+  onMounted(() => {
+    storeNotes.getNotes()
+  })
 
 </script>
