@@ -32,4 +32,10 @@ const router = createRouter({
   routes
 })
 
+//navigation guards
+router.beforeEach(async (to, from) => {
+  console.log('to: ', to)
+  console.log('from: ', from)
+})
+
 export default router
